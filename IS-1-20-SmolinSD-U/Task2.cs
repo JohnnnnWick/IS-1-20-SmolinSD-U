@@ -37,7 +37,6 @@ namespace IS_1_20_SmolinSD_U
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             //Создание экземпляра класса
