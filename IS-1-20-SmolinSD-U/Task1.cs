@@ -13,7 +13,7 @@ namespace IS_1_20_SmolinSD_U
 {
     public partial class Task1 : Form
     {
-        abstract class Complektac<S>
+        abstract class Complektac<S> //Создание абстрактного класса
         {
             public int Price;
             public int Yearofiss;
