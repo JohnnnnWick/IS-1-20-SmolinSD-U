@@ -47,13 +47,18 @@ namespace IS_1_20_SmolinSD_U
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Возникла ошибка");
+                MessageBox.Show("ошибочка");
             }
             finally
             {
-                MessageBox.Show("ЕЕЕЕЕЕ ВСЕ НОРМ!!!!!!!");
+                MessageBox.Show("а ну а ну давай");
                 con.conn().Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

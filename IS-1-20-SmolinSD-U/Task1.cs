@@ -28,7 +28,7 @@ namespace IS_1_20_SmolinSD_U
 
             public void Display()//виртуальный метод вывода полей класса
             {
-                Console.WriteLine($"Цена{Price}, ГодВып{Yearofiss}, Артикул: {Articul} ");
+                Console.WriteLine($"Цена{Price}, ГодВып{Yearofiss}, Артикуль: {Articul} ");
             }
         }
         class HardDrives<S> : Complektac<S>//наследованный класс, юзает обобщ тип

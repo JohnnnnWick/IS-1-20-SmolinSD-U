@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace IS_1_20_SmolinSD_U
 {
@@ -16,5 +17,21 @@ namespace IS_1_20_SmolinSD_U
         {
             InitializeComponent();
         }
+
+        private void Task3_Load(object sender, EventArgs e)
+        {
+            //Переменная соединения
+            MySqlConnection conn;
+        //DataAdapter представляет собой объект Command , получающий данные из источника данных.
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
+        private BindingSource bSource = new BindingSource();
+        //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
+        //модель независимо от источника данных.DataSet представляет полный набор данных, включая таблицы, содержащие, упорядочивающие 
+        //и ограничивающие данные, а также связи между таблицами.
+        private DataSet ds = new DataSet();
+        //Представляет одну таблицу данных в памяти.
+        private DataTable table = new DataTable();
+    }
     }
 }
