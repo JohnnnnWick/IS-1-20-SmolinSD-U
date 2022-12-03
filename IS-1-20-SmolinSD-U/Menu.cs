@@ -48,5 +48,10 @@ namespace IS_1_20_SmolinSD_U
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
