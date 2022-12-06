@@ -15,6 +15,7 @@ namespace IS_1_20_SmolinSD_U
     {
         MySqlConnection conn;
         Class1 connect;
+
         public Task3()
         {
             InitializeComponent();
