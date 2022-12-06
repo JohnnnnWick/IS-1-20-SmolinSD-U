@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConnectDB;
 using MySql.Data.MySqlClient;
+using static ConnectDB.Class1;
 
 namespace IS_1_20_SmolinSD_U
 {
@@ -32,9 +34,9 @@ namespace IS_1_20_SmolinSD_U
             {
                 conn.Open();
                 MySqlDataAdapter IDataAdapter = new MySqlDataAdapter(sql, conn);
-                DataSet ds2 = new DataSet();
-                IDataAdapter.Fill(ds2);
-                dataGridView1.DataSource = ds2.Tables[0];
+                DataSet aa1 = new DataSet();
+                IDataAdapter.Fill(aa1);
+                dataGridView1.DataSource = aa1.Tables[0];
             }
             finally
             {

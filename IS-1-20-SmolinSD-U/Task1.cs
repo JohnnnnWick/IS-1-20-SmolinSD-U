@@ -83,31 +83,31 @@ namespace IS_1_20_SmolinSD_U
 
         private void button1_Click(object sender, EventArgs e) //выполняет вывод инфы в бд
         {
-            listBox1.Items.Clear();//клир
+            лист1.Items.Clear();//клир
             //создание экз класса, в котор нужен текстбокс
             HardDrives<int> i1 = new HardDrives<int>(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), 
                 Convert.ToInt32(textBox3.Text), Convert.ToInt32(textBox4.Text), Convert.ToInt32(textBox5.Text), Convert.ToInt32(textBox9.Text));
-            listBox1.Items.Add($"Цена {textBox1.Text}");
-            listBox1.Items.Add($"ГодВыпуска {textBox2.Text}");
-            listBox1.Items.Add($"Артикул {textBox9.Text}");
-            listBox1.Items.Add($"Кол-во оборотов {textBox3.Text}");
-            listBox1.Items.Add($"Интерфейс {textBox4.Text}");
-            listBox1.Items.Add($"Объем {textBox5.Text}");
+            лист1.Items.Add($"Цена {textBox1.Text}");
+            лист1.Items.Add($"ГодВыпуска {textBox2.Text}");
+            лист1.Items.Add($"Артикул {textBox9.Text}");
+            лист1.Items.Add($"Кол-во оборотов {textBox3.Text}");
+            лист1.Items.Add($"Интерфейс {textBox4.Text}");
+            лист1.Items.Add($"Объем {textBox5.Text}");
             //вызывание метода
             i1.Display();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();//клир
+            лист1.Items.Clear();//клир
             //создание экз класса, в котор нужен текстбокс
             Videoc<int> g1 = new Videoc<int>(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), 
                 Convert.ToInt32(textBox3.Text), Convert.ToInt32(textBox7.Text), Convert.ToInt32(textBox8.Text), textBox9.Text);
-            listBox1.Items.Add($"Цена {textBox1.Text}");
-            listBox1.Items.Add($"Год {textBox2.Text}");
-            listBox1.Items.Add($"Артикул {textBox9.Text}");
-            listBox1.Items.Add($"Частота {textBox6.Text}");
-            listBox1.Items.Add($"Производитель {textBox7.Text}");
-            listBox1.Items.Add($"Объем памяти {textBox8.Text}");
+            лист1.Items.Add($"Цена {textBox1.Text}");
+            лист1.Items.Add($"Год {textBox2.Text}");
+            лист1.Items.Add($"Артикул {textBox9.Text}");
+            лист1.Items.Add($"Частота {textBox6.Text}");
+            лист1.Items.Add($"Производитель {textBox7.Text}");
+            лист1.Items.Add($"Объем памяти {textBox8.Text}");
             g1.Display();//вызывание метода
         }
 

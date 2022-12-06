@@ -170,5 +170,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectDB\ConnectDB.csproj">
+      <Project>{580ca794-4049-41bc-9987-8840a8fad642}</Project>
+      <Name>ConnectDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

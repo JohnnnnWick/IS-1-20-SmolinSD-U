@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ConnectDB;
+using static ConnectDB.Class1;
 
 namespace IS_1_20_SmolinSD_U
 {

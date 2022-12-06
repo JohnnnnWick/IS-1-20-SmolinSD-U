@@ -45,7 +45,7 @@ namespace IS_1_20_SmolinSD_U
             {
                 con.conn().Open();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("ошибочка");
             }
