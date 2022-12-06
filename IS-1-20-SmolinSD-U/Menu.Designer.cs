@@ -93,7 +93,7 @@ namespace IS_1_20_SmolinSD_U
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 5;
-            this.button6.Text = "close";
+            this.button6.Text = "закрыть";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

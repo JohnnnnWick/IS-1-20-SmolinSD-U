@@ -36,17 +36,20 @@ namespace IS_1_20_SmolinSD_U
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Task3 f3 = new Task3();
+            f3.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Task4 f4 = new Task4();
+            f4.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Task5 f5 = new Task5();
+            f5.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)

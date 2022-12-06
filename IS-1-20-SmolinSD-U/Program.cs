@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace IS_1_20_SmolinSD_U
 {
-    class Сonnection // Класс
+    class СonnectionSQL // Класс
     {
-        public MySqlConnection con() // скрока поключения
+        string server = "chuc.caseum.ru";
+        //string server = "10.90.12.110";
+        string port = "33333";
+        string user = "st_1_20_27";
+        string database = "is_1_20_st27_KURS";
+        string password = "56251553";
+        public string connStr;
+        public string Connectreturn()
         {
-            string host = "10.90.12.110";
-            string port = "33333";
-            string user = "uchebka";
-            string dd = "uchebka";
-            string password = "uchebka";
-            string connStr = $"server={host};port={port};user={user};database={dd};password={password};";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            return conn;
+            return connStr = $"host={server};port={port};user={user};database={database};password={password}";
         }
     }
     static class Program

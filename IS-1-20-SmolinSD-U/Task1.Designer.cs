@@ -81,7 +81,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(379, 8);
+            this.listBox1.Location = new System.Drawing.Point(379, 15);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(362, 225);
             this.listBox1.TabIndex = 3;
@@ -231,7 +231,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 21;
-            this.button3.Text = "button3";
+            this.button3.Text = "закрыть";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
