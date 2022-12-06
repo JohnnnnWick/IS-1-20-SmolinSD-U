@@ -32,38 +32,25 @@ namespace IS_1_20_SmolinSD_U
             try
             {
                 conn.Open();
-                string sql = "SELECT id_Clients, fio_Clients, pasport_Clients, id_empl, fio_empl, phone_empl, email_empl, passport_empl FROM T_Clients INNER JOIN T_Empl ON id_Clients = id_empl";
-                dataGridView1.Columns.Add("id_Clients", "ид Клиента");
-                dataGridView1.Columns["id_Clients"].Width = 150;
+                string sql = "SELECT is_reception, doctor, id_doctor, fio_doctor FROM Reception INNER JOIN Doctors ON is_reception = id_doctor";
+                dataGridView1.Columns.Add("is_reception", "ид Клиента");
+                dataGridView1.Columns["is_reception"].Width = 100;
 
-                dataGridView1.Columns.Add("fio_Clients", "фил Клиента");
-                dataGridView1.Columns["fio_Clients"].Width = 150;
+                dataGridView1.Columns.Add("doctor", "Доктор");
+                dataGridView1.Columns["doctor"].Width = 100;
 
-                dataGridView1.Columns.Add("pasport_Clients", "паспорт Клиента");
-                dataGridView1.Columns["pasport_Clients"].Width = 150;
+                dataGridView1.Columns.Add("id_doctor", "ид Доктора");
+                dataGridView1.Columns["id_doctor"].Width = 100;
 
-                dataGridView1.Columns.Add("id_empl", "ид Сотрудника");
-                dataGridView1.Columns["id_empl"].Width = 150;
-
-                dataGridView1.Columns.Add("fio_empl", "фио Сотрудника");
-                dataGridView1.Columns["fio_empl"].Width = 150;
-
-                dataGridView1.Columns.Add("phone_empl", " телефон трудника");
-                dataGridView1.Columns["phone_empl"].Width = 150;
-
-                dataGridView1.Columns.Add("email_empl", "почта Сотрудника");
-                dataGridView1.Columns["email_empl"].Width = 150;
-
-                dataGridView1.Columns.Add("passport_empl", "паспорт Сотрудника");
-                dataGridView1.Columns["passport_empl"].Width = 150;
+                dataGridView1.Columns.Add("fio_doctor", "фио доктора");
+                dataGridView1.Columns["fio_doctor"].Width = 100;
 
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 MySqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader["id_Clients"].ToString(), reader["fio_Clients"].ToString(), reader["pasport_Clients"].ToString(), reader["id_empl"].ToString(),
-                        reader["fio_empl"].ToString(), reader["phone_empl"].ToString(), reader["email_empl"].ToString(), reader["passport_empl"].ToString());
+                    dataGridView1.Rows.Add(reader["is_reception"].ToString(), reader["doctor"].ToString(), reader["id_doctor"].ToString(), reader["fio_doctor"].ToString());
                     reader.Close();
                 }
             }
