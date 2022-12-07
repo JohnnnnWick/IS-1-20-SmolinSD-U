@@ -16,8 +16,11 @@ namespace IS_1_20_SmolinSD_U
 {
     public partial class Task4 : Form
     {
+        Class1 s = new Class1();// обявление переменной класса 
         MySqlConnection conn;
-        Class1 connect;
+        private BindingSource bSource = new BindingSource();
+        private MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        DataTable table = new DataTable();
         public Task4()
         {
             InitializeComponent();
@@ -25,18 +28,31 @@ namespace IS_1_20_SmolinSD_U
 
         private void Task4_Load(object sender, EventArgs e)
         {
-            connect = new Class1();
-            connect.Connectreturn();
-            conn = new MySqlConnection(connect.connStr);
+            //подключение к бд
+            s.Connectreturn();
+            conn = new MySqlConnection(s.connStr);
+        }
 
-            string sql = "SELECT * FROM T_datatime";
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             try
             {
+                int id = dataGridView1.SelectedCells[0].RowIndex + 1;
+
                 conn.Open();
-                MySqlDataAdapter IDataAdapter = new MySqlDataAdapter(sql, conn);
-                DataSet aa1 = new DataSet();
-                IDataAdapter.Fill(aa1);
-                dataGridView1.DataSource = aa1.Tables[0];
+
+                string sql = $"SELECT photoUrl FROM t_datatime WHERE Id = {id}";
+
+                MySqlCommand command = new MySqlCommand(sql, conn);
+
+                string picture = command.ExecuteScalar().ToString();
+
+                pictureBox1.ImageLocation = picture;
+
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка загрузки фото");
             }
             finally
             {
@@ -44,18 +60,30 @@ namespace IS_1_20_SmolinSD_U
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = dataGridView1.SelectedCells[0].RowIndex +1;
                 conn.Open();
-                string sql = $"SELECT photoUrl FROM T_datatime WHERE Id = {id}";
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                string picture = command.ExecuteScalar().ToString();
-                pictureBox1.ImageLocation = picture;
+
+                MySqlCommand command = new MySqlCommand($"SELECT id, fio, date_of_Birth, photoUrl FROM t_datatime;", conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int grid = dataGridView1.Rows.Add();
+                    dataGridView1.Rows[grid].Cells[0].Value = reader[0].ToString();
+                    dataGridView1.Rows[grid].Cells[1].Value = reader[1].ToString();
+                    dataGridView1.Rows[grid].Cells[2].Value = reader[2].ToString();
+                    dataGridView1.Rows[grid].Cells[3].Value = reader[3].ToString();
+                }
+                reader.Close();
+
             }
-           finally
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+            finally
             {
                 conn.Close();
             }
